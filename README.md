@@ -21,4 +21,4 @@ From the terminal, run:
 
 ### Importing into VSCode
 
-<TODO>
+...TODO...
