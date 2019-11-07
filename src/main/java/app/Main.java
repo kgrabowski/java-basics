@@ -6,7 +6,6 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 public class Main {
     public static void main(String[] args) {
         var config = new LwjglApplicationConfiguration();
-        config.forceExit = false;
         config.width = 640;
         config.height = 480;
         config.title = "Java Basics";
