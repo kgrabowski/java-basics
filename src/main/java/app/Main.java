@@ -3,6 +3,8 @@ package app;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
+import game.MyGame;
+
 public class Main {
     public static void main(String[] args) {
         var config = new LwjglApplicationConfiguration();
@@ -10,6 +12,6 @@ public class Main {
         config.height = 480;
         config.title = "Java Basics";
 
-        new LwjglApplication(new GameListener(), config);
+        new LwjglApplication(new MyGame(), config);
     }
 }

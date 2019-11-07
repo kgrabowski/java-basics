@@ -1,6 +1,10 @@
 package game;
 
-public class MyGame {
-    public void run() {
+import app.GameListener;
+
+public class MyGame extends GameListener {
+    @Override
+    protected void update() {
+        // Put all your code below
     }
 }

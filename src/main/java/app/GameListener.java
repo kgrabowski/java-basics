@@ -3,15 +3,17 @@ package app;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import game.MyGame;
-
-public class GameListener extends ApplicationAdapter {
-    private MyGame game;
+public abstract class GameListener extends ApplicationAdapter {
+    private SpriteBatch spriteBatch;
+    private Texture sprites;
 
     @Override
     public void create() {
-        game = new MyGame();
+        spriteBatch = new SpriteBatch();
+        sprites = new Texture("assets/tiles.png");
     }
 
     @Override
@@ -19,6 +21,20 @@ public class GameListener extends ApplicationAdapter {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        game.run();
+        spriteBatch.begin();
+        update();
+        spriteBatch.end();
+    }
+
+    @Override
+    public void dispose() {
+        spriteBatch.dispose();
+        sprites.dispose();
+    }
+
+    protected abstract void update();
+
+    protected void drawPlayerPlane(float x, float y) {
+        spriteBatch.draw(sprites, x, y, 136, 400, 65, 65);
     }
 }
