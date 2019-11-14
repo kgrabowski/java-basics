@@ -21,4 +21,8 @@ From the terminal, run:
 
 ### Importing into VSCode
 
-...TODO...
+Select _File_ -> _Open..._ and select the `java-basics` folder. The project should be correctly imported to Visual Studio Code.
+
+To run the game, click on the `src/main/java/app/Main.java` file in the sidebar on the left-hand side and then choose the _Run_ option just above the `main` method:
+
+![Run Game](notes/images/run_game.png)
