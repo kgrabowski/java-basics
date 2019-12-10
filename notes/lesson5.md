@@ -148,34 +148,34 @@ More generally, _methods_ in Java consist of three parts:
 
 Let's look at some examples:
 
-  1. ```void drawPlayerPlane(float x, float y)```
+  1. `void drawPlayerPlane(float x, float y)`
 
-    This method is named `drawPlayerPlane`; it returns nothing (`void` in Java means "nothing") and takes two arguments, `x` and `y`; both those arguments have type `float`.
+      This method is named `drawPlayerPlane`; it returns nothing (`void` in Java means "nothing") and takes two arguments, `x` and `y`; both those arguments have type `float`.
 
-    You could use this method for example like this:
-    ```Java
-    drawPlayerPlane(160, 380);
-    ```
+      You could use this method for example like this:
+      ```Java
+      drawPlayerPlane(160, 380);
+      ```
 
   2. `void sayHello(String name)`
 
-    This method is named `sayHello`; again, it returns nothing (`void`) and takes a single argument `name` of type `String`.
+      This method is named `sayHello`; again, it returns nothing (`void`) and takes a single argument `name` of type `String`.
 
-    To use this method, you could write code like this:
-    ```Java
-    sayHello("Matthew");
-    ```
+      To use this method, you could write code like this:
+      ```Java
+      sayHello("Matthew");
+      ```
 
   3. `int sum(int a, int b)`
 
-    This is a bit more interesting. This method, named `sum`, takes two integer (`int`) arguments, `a` and `b`. It also returns another integer.
+      This is a bit more interesting. This method, named `sum`, takes two integer (`int`) arguments, `a` and `b`. It also returns another integer.
 
-    Using this method would look something like:
-    ```Java
-    var result = sum(2, 5);
-    ```
+      Using this method would look something like:
+      ```Java
+      var result = sum(2, 5);
+      ```
 
-    Here, the `result` variable would hold the return value of the `sum(2, 5)` call.
+      Here, the `result` variable would hold the return value of the `sum(2, 5)` call.
 
 **Note:** in other languages, methods might be also called _functions_. For all intents and purposes, those are the same things.
 
@@ -185,96 +185,100 @@ Let's look at some examples:
 You can only go so far on theory alone. Fire up the `jshell` and let's write some methods.
 
   1. Define a simple method:
-    ```Java
-    void greeting() {
-        System.out.println("Hello!");
-    }
-    ```
 
-    This is as simple as it can get. The `greeting` method doesn't take any arguments (empty parentheses) and doesn't return any value (`void`).
+      ```Java
+      void greeting() {
+          System.out.println("Hello!");
+      }
+      ```
 
-    Run it in your `jshell` like this:
-    ```Java
-    greeting();
-    ```
-    (remember, in `jshell` the semicolon at the end is optional, but you might as well get into the habit of using it, since normally Java requires it).
+      This is as simple as it can get. The `greeting` method doesn't take any arguments (empty parentheses) and doesn't return any value (`void`).
 
-    You should see the output:
-    ```text
-    Hello!
-    ```
+      Run it in your `jshell` like this:
+      ```Java
+      greeting();
+      ```
+      (remember, in `jshell` the semicolon at the end is optional, but you might as well get into the habit of using it, since normally Java requires it).
+
+      You should see the output:
+      ```text
+      Hello!
+      ```
 
   2. Define a method with single argument:
-    ```Java
-    void sayHello(String name) {
-        System.out.println("Hello, " + name);
-    }
-    ```
 
-    Here, we've added a single parameter to the mix. Our `sayHello` method takes a single `name` argument of type `String`. As you can see from the _method body_ (that is, the commands that make up the method), we can use arguments exactly in the same way as if there were variables defined with the `var` keyword.
+      ```Java
+      void sayHello(String name) {
+          System.out.println("Hello, " + name);
+      }
+      ```
 
-    To test out this new method, type in the following:
-    ```Java
-    sayHello("Fred")
-    sayHello("Elma")
-    ```
+      Here, we've added a single parameter to the mix. Our `sayHello` method takes a single `name` argument of type `String`. As you can see from the _method body_ (that is, the commands that make up the method), we can use arguments exactly in the same way as if there were variables defined with the `var` keyword.
 
-    Check what happens, if you pass in empty string (`""`) to the method.
+      To test out this new method, type in the following:
+      ```Java
+      sayHello("Fred")
+      sayHello("Elma")
+      ```
+
+      Check what happens, if you pass in empty string (`""`) to the method.
 
   3. Define a method with single argument that returns a value:
-    ```Java
-    int negate(int number) {
-      return -number;
-    }
-    ```
 
-    Our new `negate` method takes a single `int` argument named `number` and returns an integer value (note the `int` before the method name). Methods that return a value normally are doing some sort of calculations on the provided arguments. Here, we simply negate the number (calculate its opposite).
+      ```Java
+      int negate(int number) {
+        return -number;
+      }
+      ```
 
-    Test the method yourself:
-    ```Java
-    negate(5)
-    negate(-1)
-    ```
+      Our new `negate` method takes a single `int` argument named `number` and returns an integer value (note the `int` before the method name). Methods that return a value normally are doing some sort of calculations on the provided arguments. Here, we simply negate the number (calculate its opposite).
 
-    As a good programmer, you should always be trying to break your code to see how good it is:
-    ```Java
-    negate(0)
-    ```
+      Test the method yourself:
+      ```Java
+      negate(5)
+      negate(-1)
+      ```
 
-    Fortunately for us, the method seems solid.
+      As a good programmer, you should always be trying to break your code to see how good it is:
+      ```Java
+      negate(0)
+      ```
 
-    If a method returns a value, we can assign that value to a variable to use it later in our code:
-    ```Java
-    var result = negate(-3);
-    System.out.println(result * 5);
-    ```
+      Fortunately for us, the method seems solid.
+
+      If a method returns a value, we can assign that value to a variable to use it later in our code:
+      ```Java
+      var result = negate(-3);
+      System.out.println(result * 5);
+      ```
 
   4. Define a method with multiple arguments that returns a value:
-    ```Java
-    int sum(int a, int b) {
-        return a + b;
-    }
-    ```
 
-    This is just an expansion on what we've learned so far. The `sum` methods takes two `int` arguments, `a` and `b`. It also returns an integer.
+      ```Java
+      int sum(int a, int b) {
+          return a + b;
+      }
+      ```
 
-    Using a method with multiple arguments is straight-forward:
-    ```Java
-    sum(2, 5)
-    sum(-1, 4)
-    sum(0, 0)
-    ```
+      This is just an expansion on what we've learned so far. The `sum` methods takes two `int` arguments, `a` and `b`. It also returns an integer.
 
-    Again, we can assign the return value of the method to a variable and use it later:
-    ```Java
-    var result = sum(17, -5);
-    System.out.println(result * 2);
-    ```
+      Using a method with multiple arguments is straight-forward:
+      ```Java
+      sum(2, 5)
+      sum(-1, 4)
+      sum(0, 0)
+      ```
 
-    You can also mix and match the methods to produce some complex calculations:
-    ```Java
-    var result = negate(1) * 3 + sum(8, -2);
-    System.out.println("result = " + result);
-    ```
+      Again, we can assign the return value of the method to a variable and use it later:
+      ```Java
+      var result = sum(17, -5);
+      System.out.println(result * 2);
+      ```
+
+      You can also mix and match the methods to produce some complex calculations:
+      ```Java
+      var result = negate(1) * 3 + sum(8, -2);
+      System.out.println("result = " + result);
+      ```
 
 **Extra Credit:** now that you know the basics of creating and using Java methods, try to experiment a little and write your own.
