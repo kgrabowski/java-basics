@@ -4,7 +4,7 @@ import app.GameListener;
 
 public class MyGame extends GameListener {
     // We define fields directly inside the class, like this:
-    float x = 260;
+    float x = 300;
     float y = 200;
 
     @Override

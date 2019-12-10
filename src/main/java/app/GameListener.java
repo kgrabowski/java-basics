@@ -40,7 +40,7 @@ public abstract class GameListener extends ApplicationAdapter {
     protected abstract void update();
 
     protected void drawPlayerPlane(float x, float y) {
-        spriteBatch.draw(sprites, x, y, 136, 400, 65, 65);
+        spriteBatch.draw(sprites, x - 32, y - 32, 136, 400, 65, 65);
     }
 
     protected float getInputX() {
