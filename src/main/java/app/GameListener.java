@@ -6,6 +6,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 
 public abstract class GameListener extends ApplicationAdapter {
     private SpriteBatch spriteBatch;
@@ -41,6 +42,10 @@ public abstract class GameListener extends ApplicationAdapter {
 
     protected void drawPlayerPlane(float x, float y) {
         spriteBatch.draw(sprites, x - 32, y - 32, 136, 400, 65, 65);
+    }
+
+    protected void drawEnemyPlane(Vector2 position) {
+        spriteBatch.draw(sprites, position.x - 16, position.y - 16, 70, 499, 32, 32);
     }
 
     protected float getInputX() {

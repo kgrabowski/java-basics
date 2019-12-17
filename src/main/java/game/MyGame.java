@@ -1,5 +1,7 @@
 package game;
 
+import com.badlogic.gdx.math.Vector2;
+
 import app.GameListener;
 
 public class MyGame extends GameListener {
